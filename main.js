@@ -138,3 +138,109 @@ else{
 }
 document.getElementById('ketQua_buoi4_4').innerHTML = duDoan;
 }
+/**Bài tập thêm  */
+//Bài 1
+// document.getElementById('ngayHomQua').onclick=function(){
+//   var ngay = Number(document.getElementById('nhapNgay').value);
+//   var thang =Number(document.getElementById('nhapThang').value);
+//   var nam = Number(document.getElementById('nhapNam').value);
+//   var ngayHomQua = '';
+//   var ngayMai ='';
+//   if (ngay<=31){
+//     ngayHomQua = 'ngay'/ 'thang' / 'nam';
+
+//     else if ()
+    
+//   }
+  
+
+//}
+//Bài 2 
+document.getElementById('tinhNgay').onclick=function(){
+  var thang = Number(document.getElementById(nhapThang2).value);
+  var nam =Number(document.getElementById(nhapNam2).value);
+  var soThang = '';
+  var soNgay = 0;
+
+  switch (thang){
+    case 1 : case 3 :case 5 :case 7 :case 8 :case 10 :case 12 :{
+      soThang ='Tháng một'
+    }
+
+  }
+}
+
+//Bài tập hàm
+//Bài 1
+document.getElementById('tinhDiem').onclick=function(){
+  var diemMon1 = Number(document.getElementById('diemMon1')).value;
+  var diemMon2 = Number(document.getElementById('diemMon2')).value; 
+  var diemMon3 = Number(document.getElementById('diemMon3')).value;
+  var diemChuan = Number(document.getElementById('diemChuan')).value;
+  var khuVuc = document.getElementById('khuVuc').value;
+  var doiTuong = document.getElementById('doiTuong').value;
+   var tongDiem =tinhDiem;
+  var ketQuaThi='';
+  tinhDiem(diemMon1, diemMon2, diemMon2, khuVuc, doiTuong)
+  if (diemMon1 ==0||diemMon2==0 ||diemMon3==0){
+    ketQuaThi ='Bạn đã rớt';
+  } 
+  else if(tongDiem>=diemChuan){
+  ketQuaThi= 'Bạn đã đậu';
+  }
+  else if (tongDiem<=diemChuan){
+  ketQuaThi='Bạn đã rớt:' ;
+  }
+document.getElementById('ketQuaBaiTapHam').innerHTML = ketQuaThi  + 'Điểm Thi' ;
+}
+function tinhDiem(diemMon1,diemMon2,diemMon3,khuVuc,doiTuong){
+if (khuVuc===''){
+  khuVuc=0;
+}
+else if(khuVuc==='A'){
+  khuVuc=2;
+}
+else if (khuVuc==='B'){
+khuVuc=1,5;
+}
+else if (khuVuc==='C')
+{
+  khuVuc=1;
+}
+else if (doiTuong===''){
+  doiTuong = 0;
+}
+else if (doiTuong==='1'){
+doiTuong=2;
+}
+else if (doiTuong==='2'){
+  doiTuong=1.5;
+}
+else if (doiTuong==='3'){
+  doiTuong=0.5;
+}
+tongDiem =(diemMon1+diemMon2+diemMon3+khuVuc+doiTuong)
+return tongDiem;
+}
+//Bài 2:
+document.getElementById('tinhTienDien').onclick=function(){
+  var hoTen = document.getElementById('hoTen').value;
+  var soKw = Number(document.getElementById('soKw')).value;
+  var tienDien = 0;
+  if (soKw<=50){
+    tienDien = soKw*50;
+  }
+  else if (soKw>50&&soKw<=100){
+    tienDien = 50*500+(soKw-50 )*650;
+  }
+  else if (soKw>100&&soKw<=200){
+    tienDien = 100*500+(soKw-100)*850;
+  }
+  else if (soKw>200&&soKw<=350){
+    tienDien = 200*500+(soKw-200)*1110;
+  }
+ else if (soKw>350){
+  tienDien = 350*500(soKw-350)*1110;
+ }
+document.getElementById('ketQuaTinhTienDien').innerHTML=hoTen+tienDien
+}
