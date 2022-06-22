@@ -216,128 +216,171 @@
                     <div class="alert alert-danger mt-2" id="ketQua_buoi4_4"></div>
                 </div>
             </div>
-            <br>
-            <h3>
-                Viết chương trình nhập vào ngày, tháng, năm (Giả sử nhập đúng, không cần kiểm tra hợp lệ).
-                Tìm ngày, tháng, năm của ngày tiếp theo. Tương tự tìm ngày tháng năm của ngày trước đó.
-            </h3>
-            <div class="form-group row">
-                <div class="col-4">
-                    <input type="number" id="nhapNgay">
-                </div>
-                <div class="col-4">
-                    <input type="number" id="nhapThang">
-                </div>
-                <div class="col-4">
-                    <input type="number" id="nhapNam">
-                </div>
-                <br>
-                <div class="col-4">
-                    <br>
-                    <button class="btn btn-success" id="ngayHomQua">Ngày Hôm Qua</button>
-
-                </div>
-                <div class="col-4">
-                    <br>
-                    <button class="btn btn-danger" id="ngayMai">Ngày Mai</button>
-                </div>
-                <div class="alert alert-danger mt-2" id="ketQua_baiTapThem_1"></div>
-            </div>
-            <h3>
-                Viết chương trình nhập vào tháng, năm. Cho biết tháng đó có bao nhiêu ngày. (bao gồm tháng
-                của năm nhuận).
-            </h3>
-            <div class="form-group row">
-                <div class="col-4">
-                    <input type="number" id="nhapThang2">
-                </div>
-                <div class="col-4">
-                    <input type="number" id="nhapNam2">
-                </div>
-                <br>
-                <div class="col-4">
-                    <br>
-                    <button class="btn btn-success" id="tinhNgay">Tính Ngày</button>
-                </div>
-                <div class="alert alert-danger  " id="ketQua_baiTapThem_2"></div>
-            </div>
-            <br>
-            <br>
-            <br>
-            <h3>
-                Viết chương trình nhập vào số nguyên có 3 chữ số. In ra cách đọc nó
-            </h3>
-            <div class="form-group row">
-                <div class="col-4">
-                    <input type="number" id="nhapSoCo3ChuSo">
-                </div>
-                <div class="col-4">
-                    <br>
-                    <br>
-                    <button class="btn btn-success" id="docSo">Đọc số</button>
-                </div>
-                <div class="alert alert-danger" id="ketQua_baiTapThem_2"></div>
-            </div>
-            <h3>
-                Cho biết tên và tọa độ nhà của 3 sinh viên. Cho biết tọa độ của trường đại học. Viết chương
-                trình in tên sinh viên xa trường nhất.
-            </h3>
-            <br>
-            <div class="form-group row">
-                <div class="col-4">
-                    <p>Nhập điểm chuẩn</p>
-                    <input type="number" id="diemChuan">
-                </div>
-                <div class="col-4">
-                    <p>Chọn khu vực</p>
-                    <input type="text" name="khu vực" id="khuVuc">
-                </div>
-                <div class="col-4">
-                    <p>Chọn đối tượng</p>
-                    <input type="text" id="doiTuong">
-                </div>
-                <div class="col-4">
-                    <p>Điểm môn 1</p>
-                    <input type="number" id="diemMon1">
-                </div>
-                <div class="col-4">
-                    <p>Điểm môn 2</p>
-                    <input type="number" id="diemMon2">
-                </div>
-                <div class="col-4">
-                    <p>Điểm môn 3</p>
-                    <input type="number" id="diemMon3">
-                </div>
-                <div class="col-4">
-                    <button class="btn btn-success mt-2" id="tinhDiem">Kết quả</button>
-                </div>
-                <div class="alert alert-warning mt-2" id="ketQuaBaiTapHam"></div>
-            </div>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="form-group row ">
-                <div class="col-6">
-                    <p>Nhập họ tên</p>
-                    <input type="text" id="hoTen">
-                </div>
-                <div class="col-6">
-                    <p>Nhập số kw</p>
-                    <input type="number" id="soKw">
-                </div>
-                <div class="col-4">
-                    <br>
-                    <button class="btn btn-success" id="tinhTienDien">Tính tiền điện</button>
-                </div>
-            </div>
-            <div class="alert alert-warning" id="ketQuaTinhTienDien"></div>
         </div>
+        <br>
+        <h3>
+            Viết chương trình nhập vào ngày, tháng, năm (Giả sử nhập đúng, không cần kiểm tra hợp lệ).
+            Tìm ngày, tháng, năm của ngày tiếp theo. Tương tự tìm ngày tháng năm của ngày trước đó.
+        </h3>
+        <div class="form-group row">
+            <div class="col-4">
+                <input type="number" id="nhapNgay">
+            </div>
+            <div class="col-4">
+                <input type="number" id="nhapThang">
+            </div>
+            <div class="col-4">
+                <input type="number" id="nhapNam">
+            </div>
+            <br>
+            <div class="col-4">
+                <br>
+                <button class="btn btn-success" id="ngayHomQua">Ngày Hôm Qua</button>
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="./main.js"></script>
+            </div>
+            <div class="col-4">
+                <br>
+                <button class="btn btn-danger" id="ngayMai">Ngày Mai</button>
+            </div>
+            <div class="alert alert-danger mt-2" id="ketQua_baiTapThem_1"></div>
+        </div>
+        <h3>
+            Viết chương trình nhập vào tháng, năm. Cho biết tháng đó có bao nhiêu ngày. (bao gồm tháng
+            của năm nhuận).
+        </h3>
+        <div class="form-group row">
+            <div class="col-4">
+                <input type="number" id="nhapThang2">
+            </div>
+            <div class="col-4">
+                <input type="number" id="nhapNam2">
+            </div>
+            <br>
+            <div class="col-4">
+                <br>
+                <button class="btn btn-success" id="tinhNgay">Tính Ngày</button>
+            </div>
+            <div class="alert alert-danger  " id="ketQua_baiTapThem_2"></div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <h3>
+            Viết chương trình nhập vào số nguyên có 3 chữ số. In ra cách đọc nó
+        </h3>
+        <div class="form-group row">
+            <div class="col-4">
+                <input type="number" id="nhapSoCo3ChuSo">
+            </div>
+            <div class="col-4">
+                <br>
+                <br>
+                <button class="btn btn-success" id="docSo">Đọc số</button>
+            </div>
+            <div class="alert alert-danger" id="ketQua_baiTapThem_2"></div>
+        </div>
+        <h3>
+            Cho biết tên và tọa độ nhà của 3 sinh viên. Cho biết tọa độ của trường đại học. Viết chương
+            trình in tên sinh viên xa trường nhất.
+        </h3>
+        <br>
+        <div class="form-group row">
+            <div class="col-4">
+                <p>Nhập điểm chuẩn</p>
+                <input type="number" id="diemChuan">
+            </div>
+            <div class="col-4">
+                <p>Chọn khu vực</p>
+                <input type="text" name="khu vực" id="khuVuc">
+            </div>
+            <div class="col-4">
+                <p>Chọn đối tượng</p>
+                <input type="text" id="doiTuong">
+            </div>
+            <div class="col-4">
+                <p>Điểm môn 1</p>
+                <input type="number" id="diemMon1">
+            </div>
+            <div class="col-4">
+                <p>Điểm môn 2</p>
+                <input type="number" id="diemMon2">
+            </div>
+            <div class="col-4">
+                <p>Điểm môn 3</p>
+                <input type="number" id="diemMon3">
+            </div>
+            <div class="col-4">
+                <button class="btn btn-success mt-2" id="tinhDiem">Kết quả</button>
+            </div>
+            <div class="alert alert-warning mt-2" id="ketQuaBaiTapHam"></div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="form-group row ">
+            <div class="col-6">
+                <p>Nhập họ tên</p>
+                <input type="text" id="hoTen">
+            </div>
+            <div class="col-6">
+                <p>Nhập số kw</p>
+                <input type="number" id="soKw">
+            </div>
+            <div class="col-4">
+                <br>
+                <button class="btn btn-success" id="tinhTienDien">Tính tiền điện</button>
+            </div>
+        </div>
+        <div class="alert alert-warning" id="ketQuaTinhTienDien"></div>
+
+        <br>
+        <h3>Tìm số nhỏ nhất</h3>
+        <div class="form-group row">
+            <div class="col-4">
+                <button class="btn btn-warning" id="btnXemKetQua">Xem kết quả
+                </button>
+            </div>
+        </div>
+        <div class="alert alert-warning" id="ketQua_TimSoNhoNhat"></div>
+        <br>
+        <div class="form-group">
+            <div class="col-4">
+                <p>Nhập số x</p>
+                <input id="nhapSoX">
+                <p>Nhập số n</p>
+                <input id="nhapSoN">
+            </div>
+            <div class="col-4">
+                <button class="btn btn-danger" id="btnTinhTong">
+                    Tính tổng
+                </button>
+            </div>
+        </div>
+        <div class="alert alert-danger" id="ketQua_TinhTong"></div>
+        <br>
+        <h3>Tính giai thừa</h3>
+        <div class="col-4">
+            <input type="text" id="nhapSo">
+            <button class="btn btn-danger" id="btnTinhGiaiThua">Tính giai thừa</button>
+        </div>
+        <div class="alert alert-success" id="ketQuaGiaiThua"></div>
+        <br>
+        <h3>In thẻ div</h3>
+        <div class="form-group">
+            <div class="col-4">
+                <button class="btn btn-danger" id="btnTaoTheDiv">
+                    Tạo thẻ
+                </button>
+            </div>
+        </div>
+        <div class="alert alert-warning" id="ketQuaTaoTheDiv"></div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./main.js"></script>
 </body>
 
 </html>
