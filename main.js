@@ -123,9 +123,9 @@ document.getElementById("duDoan").onclick = function () {
     duDoan = "Tam giác cân";
   } else if (
     doDaiCanh1 ==
-      Math.sqrt(doDaiCanh2 * doDaiCanh2 + doDaiCanh3 * doDaiCanh3) ||
+    Math.sqrt(doDaiCanh2 * doDaiCanh2 + doDaiCanh3 * doDaiCanh3) ||
     doDaiCanh2 ==
-      Math.sqrt(doDaiCanh1 * doDaiCanh1 + doDaiCanh3 * doDaiCanh3) ||
+    Math.sqrt(doDaiCanh1 * doDaiCanh1 + doDaiCanh3 * doDaiCanh3) ||
     doDaiCanh3 == Math.sqrt(doDaiCanh1 * doDaiCanh1 + doDaiCanh2 * doDaiCanh2)
   ) {
     duDoan = "Tam giác vuông";
@@ -173,63 +173,62 @@ document.getElementById("tinhNgay").onclick = function () {
 //Bài tập hàm
 //Bài 1
 document.getElementById("tinhDiem").onclick = function () {
-  var diemMon1 = Number(document.getElementById("diemMon1")).value;
-  var diemMon2 = Number(document.getElementById("diemMon2")).value;
-  var diemMon3 = Number(document.getElementById("diemMon3")).value;
-  var diemChuan = Number(document.getElementById("diemChuan")).value;
-  var khuVuc = document.getElementById("khuVuc").value;
-  var doiTuong = document.getElementById("doiTuong").value;
-  var tongDiem = tinhDiem;
+  var khuVuc = Number(document.getElementById("khuVuc").value);
+  var doiTuong = Number(document.getElementById("doiTuong").value);
+  var diemChuan = Number(document.getElementById('diemChuan').value);
+  var diemMon1 = Number(document.getElementById('diemMon1').value);
+  var diemMon2 = Number(document.getElementById('diemMon2').value);
+  var diemMon3 = Number(document.getElementById('diemMon3').value);
+  var tongDiem = 0;
   var ketQuaThi = "";
-  tinhDiem(diemMon1, diemMon2, diemMon2, khuVuc, doiTuong);
-  if (diemMon1 == 0 || diemMon2 == 0 || diemMon3 == 0) {
-    ketQuaThi = "Bạn đã rớt";
-  } else if (tongDiem >= diemChuan) {
-    ketQuaThi = "Bạn đã đậu";
-  } else if (tongDiem <= diemChuan) {
-    ketQuaThi = "Bạn đã rớt:";
+  tongDiem = diemMon1 + diemMon2 + diemMon3
+  if (khuVuc === 2) {
+    tongDiem = tongDiem + 2;
+  } else if (khuVuc === 1) {
+    tongDiem = tongDiem + 1;
+  } else if (khuVuc === 0.5) {
+    tongDiem = tongDiem + 0.5;
+  } else {
+    tongDiem = tongDiem + 0;
   }
-  document.getElementById("ketQuaBaiTapHam").innerHTML = ketQuaThi + "Điểm Thi";
-};
-function tinhDiem(diemMon1, diemMon2, diemMon3, khuVuc, doiTuong) {
-  if (khuVuc === "") {
-    khuVuc = 0;
-  } else if (khuVuc === "A") {
-    khuVuc = 2;
-  } else if (khuVuc === "B") {
-    (khuVuc = 1), 5;
-  } else if (khuVuc === "C") {
-    khuVuc = 1;
-  } else if (doiTuong === "") {
-    doiTuong = 0;
-  } else if (doiTuong === "1") {
-    doiTuong = 2;
-  } else if (doiTuong === "2") {
-    doiTuong = 1.5;
-  } else if (doiTuong === "3") {
-    doiTuong = 0.5;
+
+  if (doiTuong === 1) {
+    tongDiem = tongDiem + 2.5;
+  } else if (doiTuong === 2) {
+    tongDiem = tongDiem + 1.5;
+  } else if (doiTuong === 3) {
+    tongDiem = tongDiem + 0;
   }
-  tongDiem = diemMon1 + diemMon2 + diemMon3 + khuVuc + doiTuong;
-  return tongDiem;
+  if (tongDiem >= diemChuan && diemMon1 > 0 && diemMon2 > 0 && diemMon2 > 0) {
+    ketQuaThi = 'Đậu, tổng điểm : ' + tongDiem;
+  } else {
+    ketQuaThi = 'Rớt, tổng điểm : ' + tongDiem;
+  }
+  document.getElementById('ketQuaBaiTapHam').innerHTML = ketQuaThi;
 }
 //Bài 2:
 document.getElementById("tinhTienDien").onclick = function () {
-  var hoTen = document.getElementById("hoTen").value;
-  var soKw = Number(document.getElementById("soKw")).value;
-  var tienDien = 0;
-  if (soKw <= 50) {
-    tienDien = soKw * 50;
+  var hoTen = document.getElementById('hoTen').value;
+  var soKw = Number(document.getElementById('soKw').value);
+  //output
+  var tongTien = 0;
+  //progress
+  if (soKw > 0 && soKw <= 50) {
+    tongTien = soKw * 500;
   } else if (soKw > 50 && soKw <= 100) {
-    tienDien = 50 * 500 + (soKw - 50) * 650;
+    tongTien = (50 * 500) + (soKw - 50) * 650;
   } else if (soKw > 100 && soKw <= 200) {
-    tienDien = 100 * 500 + (soKw - 100) * 850;
+    tongTien = (50 * 500) + (50 * 650) + (soKw - 100) * 850;
   } else if (soKw > 200 && soKw <= 350) {
-    tienDien = 200 * 500 + (soKw - 200) * 1110;
+    tongTien = (50 * 500) + (50 * 650) + (100 * 850) + (soKw - 200) * 1100;
   } else if (soKw > 350) {
-    tienDien = 350 * 500(soKw - 350) * 1110;
+    tongTien = (50 * 500) + (50 * 650) + (100 * 850) + (150 * 1100) + (soKw - 350) * 1300;
+  } else {
+    tongTien = 'Không xác định!';
   }
-  document.getElementById("ketQuaTinhTienDien").innerHTML = hoTen + tienDien;
-};
+
+  document.getElementById('ketQuaTinhTienDien').innerHTML = 'Họ tên: ' + hoTen + ', phải trả tổng tiền điện là ' + tongTien.toLocaleString() + 'VND';
+}
 //Tìm số nhỏ nhất
 document.getElementById("btnXemKetQua").onclick = function () {
   var sum = 0;
@@ -266,14 +265,153 @@ document.getElementById("btnTinhGiaiThua").onclick = function () {
 //in thẻ div
 document.getElementById("btnTaoTheDiv").onclick = function () {
   var content = "";
-  var buocNhay=1;
+  var buocNhay = 1;
   while (buocNhay <= 10) {
-    if (buocNhay % 2== 0) {
-      content += '<div style="background-color: red; color: white;">Div chẵn</div>';
+    if (buocNhay % 2 == 0) {
+      content +=
+        '<div style="background-color: red; color: white;">Div chẵn</div>';
     } else {
-      content += '<div style="background-color: blue; color: white;">Div lẻ</div>';
+      content +=
+        '<div style="background-color: blue; color: white;">Div lẻ</div>';
     }
     buocNhay++;
   }
   document.getElementById("ketQuaTaoTheDiv").innerHTML = content;
 };
+var arrNumber = [];
+document.getElementById("btnThemSo").onclick = function (e) {
+  e.preventDefault();
+  var iSo = Number(document.getElementById("nhapSo_n").value);
+  var ketQua = "";
+  arrNumber.push(iSo);
+  ketQua = arrNumber;
+  document.getElementById("ketQuaThemSo").innerHTML = ketQua;
+};
+document.getElementById("btnTinhTongSoDuong").onclick = function () {
+  var tong = 0;
+  for (var i = 0; i < arrNumber.length; i++) {
+    tong += arrNumber[i];
+  }
+  document.getElementById("ketQuaTinhTongSoDuong").innerHTML =
+    "Tổng số Dương là : " + tong;
+};
+document.getElementById("btnDemSoDuong").onclick = function () {
+  var dem = 0;
+  for (var index = 0; index < arrNumber.length; index++)
+    if (arrNumber[index] > 0) {
+      dem++;
+    }
+  document.getElementById("ketQuaDemSoDuong").innerHTML = "Số dương là: " + dem;
+};
+document.getElementById("btnTimSoNhoNhat").onclick = function () {
+  var soNhoNhat = arrNumber[0];
+  for (var index = 0; index < arrNumber.length; index++) {
+    if (arrNumber < soNhoNhat) {
+      arrNumber[index] = soNhoNhat;
+    }
+  }
+  document.getElementById("ketQuaTimSoNhoNhat").innerHTML =
+    "Số nhỏ nhất là: " + soNhoNhat;
+};
+
+document.querySelector('#btnTimSoDuongNhoNhat').onclick = function () {
+  var arrSoDuong = arrNumber[0];
+  for (var index = 0; index < arrNumber.length; index++) {
+    if (arrNumber[index] > 0 && arrNumber[index] < arrSoDuong) {
+      arrSoDuong = arrNumber[index];
+    }
+    break;
+  }
+
+  document.querySelector('#ketQuaTimSoDuongNhoNhat').innerHTML = arrSoDuong;
+}
+document.querySelector('#btnTimSoChan').onclick = function () {
+  var soChan = 0;
+  for (var index = 0; index < arrNumber.length; index++) {
+    if (arrNumber[index] % 2 === 0) {
+      soChan = arrNumber[index];
+    }
+  }
+  document.querySelector('#ketQuaTimSoChan').innerHTML = soChan;
+}
+document.querySelector('#btnDoiCho').onclick = function () {
+  var viTri1 = Number(document.querySelector('#viTri1').value);
+  var viTri2 = Number(document.querySelector('#viTri2').value);
+  var viTri = arrNumber[viTri1]
+
+  for (var index = 0; index < arrNumber.length; index++) {
+    arrNumber[viTri1] = arrNumber[viTri2];
+    arrNumber[viTri2] = viTri;
+  }
+  document.querySelector('#ketQuaDoiCho').innerHTML = arrNumber;
+}
+document.querySelector('#btnSapXep').onclick = function () {
+  arrNumber.sort(function (so2, so1) {
+    return so2 - so1;
+  });
+  document.querySelector('#ketQuaSapXepTangDan').innerHTML = arrNumber;
+}
+document.querySelector('#btnTimSoNguyenToDauTien').onclick = function () {
+  var SoNguyenToDauTien = 0;
+  for (var index = 0; index < arrNumber.length; index++) {
+    kiemTra = kiemTraSoNguyenTo(arrNumber[index]);
+    if (kiemTra === true && arrNumber[index] > 1) {
+      SoNguyenToDauTien = arrNumber[index];
+      break;
+    }
+  }
+  document.querySelector('#ketQuaTimSoNguyenToDauTien').innerHTML = SoNguyenToDauTien;
+}
+
+function kiemTraSoNguyenTo(so) {
+  var kiemTra = true;
+  for (var uoc = 2; uoc <= so / 2; uoc++) {
+    if (so % uoc === 0) {
+      kiemTra = false;
+      break;
+    }
+  } return kiemTra;
+}
+
+var arrNumberNew = [];
+document.getElementById("btnThemSoMoi").onclick = function (e) {
+  e.preventDefault();
+  var iSo = Number(document.getElementById("soNguyenMoi").value);
+  var ketQua = "";
+  arrNumberNew.push(iSo);
+  ketQua = arrNumberNew;
+  document.getElementById("ketQuaThemSoMoi").innerHTML = ketQua;
+};
+document.querySelector('#btnDemSoNguyen').onclick = function () {
+  var soLuong = 0;
+  for (var index = 0; index < arrNumberNew.length; index++) {
+    if (Number.isInteger(arrNumberNew[index]) === true) {
+      soLuong++;
+    }
+  }
+  document.querySelector('#ketQuaDemSoNguyen').innerHTML = soLuong;
+};
+document.querySelector('#btnSoSanhSoLuong').onclick = function () {
+  var ketQua = '';
+  var soDuong = 0;
+  var soAm = 0;
+  for (var index = 0; index < arrNumber.length; index++) {
+    if (arrNumber[index] > 0) {
+      soDuong++;
+    }
+  }
+  for (var index = 0; index < arrNumber.length; index++) {
+    if (arrNumber[index] < 0) {
+      soAm++;
+    }
+  }
+  if (soDuong > soAm) {
+    ketQua = 'Số dương nhiều hơn số âm'
+  } else if (soAm > soDuong) {
+    ketQua = 'Số dương ít hơn số âm'
+  }
+  else {
+    ketQua = 'Số dương = số âm'
+  }
+  document.querySelector('#ketQuaSoSanh').innerHTML = ketQua;
+}
